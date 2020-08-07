@@ -1,0 +1,13 @@
+version: '3'
+services:
+  server:
+    container_name: server
+    image: node:12.17.0-alpine
+    volumes:
+      - .:/server
+    working_dir: /server
+    ports:
+      - 8080:8080
+    tty: true
+    stdin_open: true
+    entrypoint: "npm start"
